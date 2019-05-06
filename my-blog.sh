@@ -26,7 +26,7 @@ startup(){
     else
         jar_path=`find .. -name 'my-blog*.jar'`
         echo "jarfile=$jar_path"
-        cmd="java $1 -jar $jar_path > ./my-blog.out < /dev/null &"
+        cmd="java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8888 $1 -jar $jar_path > ./my-blog.out < /dev/null &"
         echo "cmd: $cmd"
         java $1 -jar $jar_path > ./my-blog.out < /dev/null &
         show_log
