@@ -10,7 +10,7 @@ public class Pwdtest {
     public static void main(String args[]){
         UserVo user = new UserVo();
         user.setUsername("admin");
-        user.setPassword("J9lew2irojE23");
+        user.setPassword("123456");
         String encodePwd = TaleUtils.MD5encode(user.getUsername() + user.getPassword());
         System.out.println(encodePwd);
     }
