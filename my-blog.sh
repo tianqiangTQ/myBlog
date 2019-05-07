@@ -28,7 +28,7 @@ startup(){
         echo "jarfile=$jar_path"
         cmd="java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8787 $1 -jar $jar_path > ./my-blog.out < /dev/null &"
         echo "cmd: $cmd"
-        java $1 -jar $jar_path > ./my-blog.out < /dev/null &
+        eval $cmd
         show_log
     fi
 }
